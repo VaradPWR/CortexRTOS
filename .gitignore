@@ -1,0 +1,14 @@
+# Build files
+build/
+*.o
+*.elf
+
+# Temporary files
+*.log
+*.swp
+
+# VSCode (if used)
+.vscode/
+
+# OS files
+.DS_Store
