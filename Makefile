@@ -8,6 +8,7 @@ LDFLAGS = -Tstartup/STM32F103XX_FLASH.ld --specs=nosys.specs
 
 SRC = main.c \
 core/system.c \
+rtos/task.c \
 startup/startup_stm32f103xb.s
 
 OBJ = $(SRC:.c=.o)
