@@ -1,5 +1,6 @@
 #include <stdint.h>
 #include "tcb.h"
+#include "core_cm3.h"
 
 void init_task_stack(TCB_t *tcb, void (*task_func)(void)) {
 
@@ -35,4 +36,19 @@ void init_task_stack(TCB_t *tcb, void (*task_func)(void)) {
 
     // Save stack pointer
     tcb->sp = sp;
+}
+
+void task_delay(uint32_t ticks) {
+    // Get the currently running task
+    TCB_t *current = scheduler_get_current();
+ 
+    // Set the countdown
+    current->delay_ticks = ticks;
+ 
+    // Block the task
+    current->state = TASK_BLOCKED;
+ 
+    // Request a context switch via PendSV
+    // PendSV fires as soon as no higher priority ISR is running
+    SCB->ICSR |= SCB_ICSR_PENDSVSET_Msk;
 }
