@@ -3,6 +3,8 @@
 #include "core_cm3.h"
 #include "tcb.h"
 
+void systick_init(uint32_t tick_hz);
+
 void init_task_stack(TCB_t *tcb, void (*task_func)(void));
 
 // ----------- GPIO (PC13 LED) -----------
@@ -41,6 +43,7 @@ void task1(void) {
 // ----------- Main -----------
 int main(void) {
 
+    systick_init(1000);
     gpio_init();   // init LED
 
     // Setup TCB
