@@ -67,16 +67,19 @@ build/main.elf
 ```
 ---
 
-## Why I am building this
-
-To understand:
-
-* How context switching actually works
-* How interrupts interact with scheduling
-* What an RTOS is doing in MCU
-
----
-
 ## Status
 
 Built a working kernel, but with a Round robin scheduler instead on priority based.
+
+---
+
+##  Demo
+
+- Task 1 → LED blink @ 500 ms  
+- Task 2 → LED blink @ 1000 ms  
+- Task 3 → LED blink @ 2000 ms  
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/03b664e8-ff61-4c0c-bf6b-c59763de8496" width="500"/>
+</p>
+
