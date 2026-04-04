@@ -79,4 +79,4 @@ To understand:
 
 ## Status
 
-Work in progress.
+Built a working kernel, but with a Round robin scheduler instead on priority based.
