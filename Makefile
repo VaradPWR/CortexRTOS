@@ -10,6 +10,8 @@ SRC = main.c \
 core/system.c \
 rtos/task.c \
 rtos/systick.c \
+rtos/scheduler.c \
+rtos/pendsv.s \
 startup/startup_stm32f103xb.s
 
 OBJ = $(SRC:.c=.o)

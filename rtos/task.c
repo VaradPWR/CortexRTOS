@@ -1,6 +1,8 @@
 #include <stdint.h>
+#include "device.h"
 #include "tcb.h"
 #include "core_cm3.h"
+#include "scheduler.h"
 
 void init_task_stack(TCB_t *tcb, void (*task_func)(void)) {
 

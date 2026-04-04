@@ -1,4 +1,5 @@
 #include "scheduler.h"
+#include <stddef.h>
 
 static TCB_t *tasks[MAX_TASKS];
 static int task_count = 0;
