@@ -21,8 +21,8 @@ Everything is written from scratch:
 * PendSV-based context switching
 * Separate stack per task (PSP)
 * Basic task control block (TCB)
-* Priority-based scheduling
 * Task delay (blocking with tick count)
+* Round robin scheduling
 
 ---
 
@@ -32,6 +32,8 @@ Everything is written from scratch:
 * Queues / semaphores
 * Dynamic task creation
 * Advanced scheduling
+* Priority-based scheduling
+
 
 ---
 
