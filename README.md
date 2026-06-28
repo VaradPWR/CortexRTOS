@@ -22,7 +22,7 @@ Everything is written from scratch:
 * Separate stack per task (PSP)
 * Basic task control block (TCB)
 * Task delay (blocking with tick count)
-* Round robin scheduling
+* Preemptive Sccheduling
 
 ---
 
@@ -32,7 +32,7 @@ Everything is written from scratch:
 * Queues / semaphores
 * Dynamic task creation
 * Advanced scheduling
-* Priority-based scheduling
+
 
 
 ---
@@ -72,6 +72,7 @@ build/main.elf
 ## Status
 
 Built a working kernel, but with a Round robin scheduler instead on priority based.
+28/6: Implemented Preemptive Scheduling
 
 ---
 
