@@ -6,7 +6,7 @@
 typedef enum {
     TASK_READY = 0,
     TASK_BLOCKED = 1,
-    //no real need for TASK_Running as only 1 task will be running at a time
+    TASK_RUNNING = 2,
 } task_state_t;
 
 typedef struct {
@@ -14,7 +14,7 @@ typedef struct {
     uint32_t *stack_base;   // Base of stack
     uint32_t stack_size;    // Stack size
     uint32_t priority;      // Priority
-    task_state_t state;     // READY or BLOCKED
+    task_state_t state;     // READY or BLOCKED or RUNNING
     uint32_t delay_ticks;   // Delay counter
 } TCB_t;
 

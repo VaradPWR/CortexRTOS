@@ -4,7 +4,7 @@
 #include "tcb.h"
 #include "scheduler.h"
 
-void systick_init(uint32_t tick_hz);
+void systick_init(void);
 void init_task_stack(TCB_t *tcb, void (*task_func)(void));
 void task_delay(uint32_t ticks);
 
@@ -72,7 +72,7 @@ void idle_task(void) {
 
 int main(void) {
 
-    systick_init(1000);
+    systick_init();
     gpio_init();
 
     tcb1.stack_base = task1_stack;
@@ -101,7 +101,7 @@ int main(void) {
 
     tcb_idle.stack_base = idle_stack;
     tcb_idle.stack_size = 64;
-    tcb_idle.priority   = 0;
+    tcb_idle.priority   = 255;
     tcb_idle.state      = TASK_READY;
     tcb_idle.delay_ticks = 0;
     init_task_stack(&tcb_idle, idle_task);
@@ -122,7 +122,7 @@ int main(void) {
         "POP {PC}         \n"
         :
         : "r"(first->sp)
-    );
+    ); //this blocks the main thread and starts the first task. The first task will never return, so we don't need to worry about returning to main.
 
     while(1);
 }
